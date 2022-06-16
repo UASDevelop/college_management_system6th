@@ -1,4 +1,5 @@
 import 'package:college_management_system6th/Sign_up.dart';
+import 'package:college_management_system6th/SplashScreen.dart';
 import 'package:college_management_system6th/sign_in.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +24,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('College Management System'),
-        ),
-        body: const Sign_in(),
+
+        body: const SplashScreen(),
       ),
     );
   }

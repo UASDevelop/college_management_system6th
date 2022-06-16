@@ -24,13 +24,13 @@ class _Sign_upState extends State<Sign_up> {
         child: ListView(
           children: [
            textfield(
-          _name,'Name','abc'
+          _name,'Name','Enter Name'
 
         ),
             textfield(
-                _email,'email','vcdg'
+                _email,'email','Enter Email'
             ), textfield(
-                _password,'password','cgsfh'
+                _password,'password','Enter Password'
             ),
            ElevatedButton(onPressed: ()async{
              Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
@@ -51,8 +51,10 @@ Widget textfield(
     return Container(
       margin: EdgeInsets.only(left: 30,right: 30, bottom: 20,top: 20),
       child: TextField(
+
         controller: _controller,
         decoration: InputDecoration(
+          border: OutlineInputBorder(),
           labelText: label,
           hintText: label,
         ),

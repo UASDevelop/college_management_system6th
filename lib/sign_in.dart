@@ -23,8 +23,8 @@ class _Sign_inState extends State<Sign_in> {
       body: Form(
         child: ListView(
           children: [
-            textfield(_email, 'email', 'vcdg'),
-            textfield(_password, 'password', 'cgsfh'),
+            textfield(_email, 'email', 'Enter Email'),
+            textfield(_password, 'password', 'Enter Password'),
             ElevatedButton(
                 onPressed: () async {
                   try {
@@ -75,7 +75,7 @@ class _Sign_inState extends State<Sign_in> {
             Row(
               children: [
                 Container(
-                  child: Text('Dont hsve account'),
+                  child: Text('Dont have account'),
                   margin: EdgeInsets.only(left: 20, right: 20),
                 ),
                 ElevatedButton(

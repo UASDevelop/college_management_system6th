@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'Teacher/AddMarks.dart';
+
 class Add_Student extends StatefulWidget {
   const Add_Student({Key? key}) : super(key: key);
 
@@ -44,8 +46,13 @@ class _Add_StudentState extends State<Add_Student> {
             textfield(
                 _department,'enroll','depart'
             ),
+            Container(
+              margin: EdgeInsets.only(left: 20,right: 20),
+              height: 60,
+              width: 100,
+              child:
             ElevatedButton(onPressed: (){
-              FirebaseFirestore.instance.collection('Students').add({
+              FirebaseFirestore.instance.collection('Students').doc(_rollno.text).set({
                 'Student Name': _stdname.text,
                 'Roll No': _rollno.text,
                 'Contact No': _contactno.text,
@@ -54,7 +61,15 @@ class _Add_StudentState extends State<Add_Student> {
               });
               reset();
 
-            }, child: Text('Submit'))
+            }, child: Text('Submit'))),
+            Container(
+              margin: EdgeInsets.all(20),
+              height: 60,
+              width: 20,
+              child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddMarks()));
+              }, child: Text('Add Students Marks')),
+            )
           ],
         ),
       ),
